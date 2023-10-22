@@ -1,3 +1,4 @@
+#!/home/tefan/.conda/envs/lftc_env/bin
 import argparse
 import re
 import tabulate
@@ -15,7 +16,7 @@ atoms = set()
 program_structure = []
 with open(args['src'], "r") as program:
 
-    for line in program:
+    for i, line in enumerate(program):
         line_structure = []
         new_line = line
         for word in reserved_words:
@@ -56,7 +57,11 @@ with open(args['src'], "r") as program:
                 start = word[0] + len(word[1])
                 p += 1
                 if pos >= 0:
-                    m = re.search('[a-zA-Z][a-zA-Z0-9_.]*', str(last_atom))
+                    m = re.fullmatch('[a-zA-Z][a-zA-Z0-9_.]*', str(last_atom))
+                    n = re.fullmatch('([1-9][0-9]*(\.[0-9]*)?)|(0(\.[0-9]*)?)', str(last_atom))
+                    if m is None and n is None:
+                        print(f'INVALID VARIABLE NAME/CONST on line {i} : {str(last_atom)}')
+                        exit(1)
                     at = last_atom
                     if m is not None:
                         point = last_atom.find(".")
@@ -66,7 +71,7 @@ with open(args['src'], "r") as program:
                     atoms.add(at)
 
                     if m is not None and len(last_atom) > 8:
-                        print("MAX 8 CHARACTER IDS")
+                        print(f"MAX 8 CHARACTER IDS ON LINE {i}")
                         exit(1)
                     break;
 

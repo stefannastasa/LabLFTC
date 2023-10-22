@@ -1,4 +1,4 @@
-#include <iostream>
+#include<iostream>
 struct pereche{
 	int n;
 	int m;
