@@ -1,3 +1,0 @@
-/home/tefan/Facultate/LFTC/MLP_homework/cmake-build-debug/CMakeFiles/MLP_homework.dir
-/home/tefan/Facultate/LFTC/MLP_homework/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/tefan/Facultate/LFTC/MLP_homework/cmake-build-debug/CMakeFiles/rebuild_cache.dir
