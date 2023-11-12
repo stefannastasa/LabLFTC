@@ -4,5 +4,4 @@
     <option name="sdkName" value="lftc_env" />
   </component>
   <component name="CMakeWorkspace" PROJECT_DIR="$PROJECT_DIR$" />
-  <component name="ProjectRootManager" version="2" project-jdk-name="lftc_env" project-jdk-type="Python SDK" />
 </project>
